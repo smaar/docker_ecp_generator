@@ -1,0 +1,27 @@
+{
+  "name": "docker ecommerce platforms",
+  "version": "0.0.1",
+  "homepage": "http://placeholder.com",
+  "authors": ["Matt Martin"],
+  "description": "web interface for Docker eCommerce platforms",
+  "keywords": ["docker", "ecp", "ecommerce", "ecommerce testing"],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.7",
+    "angular": "~1.5.8",
+    "angular-resource": "~1.5.8",
+    "angular-route": "~1.5.8",
+    "jquery": "~3.1.0",
+    "lodash": "~4.14.2",
+    "markdown": "~0.5.0",
+    "alertify-js": "^1.8.0"
+  }
+}

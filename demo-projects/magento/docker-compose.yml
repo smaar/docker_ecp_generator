@@ -1,0 +1,22 @@
+version: '3.0'
+
+services:
+  db:
+    image: mysql:5.6.23
+    volumes:
+      - db-data:/var/lib/mysql/data
+    env_file:
+      - .env
+  web:
+    build: ./
+    ports:
+      - "80:80"
+      - "22:22"
+    links:
+      - db
+    env_file:
+      - .env
+    depends_on:
+      - db
+volumes:
+  db-data:
