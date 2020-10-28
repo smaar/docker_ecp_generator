@@ -45,5 +45,6 @@ You can use anything you want!  I personally use Docker Desktop or Portainer dep
 You add projects into `demo-projects/*` and rebuild the image for them to take affect.
 
 
-## Note about volumes
-Since you're running Docker Compose inside a container you must pay attention to volumes mounted with relative paths, see [Issue #6](https://github.com/francescou/docker-compose-ui/issues/6)
+## Notes
+- Main code for web UI and functionality taken from https://github.com/francescou/docker-compose-ui
+- Since you're running Docker Compose inside a container you must pay attention to volumes mounted with relative paths, see [Issue #6](https://github.com/francescou/docker-compose-ui/issues/6)
