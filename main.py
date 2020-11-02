@@ -522,10 +522,6 @@ def index():
     """
     return app.send_static_file('index.html')
 
-@app.route('/<path:path>')
-def send_static_stuff(path):
-    return app.send_static_file(path)
-
 # basic exception handling
 
 
