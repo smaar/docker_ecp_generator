@@ -10,7 +10,7 @@ from shutil import rmtree
 from compose.service import ImageType, BuildAction
 import docker
 import requests
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, send_from_directory
 from scripts.git_repo import git_pull, git_repo, GIT_YML_PATH
 from scripts.bridge import ps_, get_project, get_container_from_id, get_yml_path, containers, project_config, info
 from scripts.find_files import find_yml_files, get_readme_file, get_logo_file, get_versions, change_version
@@ -24,7 +24,7 @@ YML_PATH = os.getenv('DOCKER_COMPOSE_UI_YML_PATH') or '.'
 COMPOSE_REGISTRY = os.getenv('DOCKER_COMPOSE_REGISTRY')
 
 logging.basicConfig(level=logging.INFO)
-app = Flask(__name__, static_folder='/app/static', static_url_path='')
+app = Flask(__name__, static_url_path='')
 
 
 def load_projects():
@@ -521,6 +521,10 @@ def index():
     index.html
     """
     return app.send_static_file('index.html')
+
+@app.route('/<path:path>')
+def send_static_stuff(path):
+    return app.send_static_file(path)
 
 # basic exception handling
 
