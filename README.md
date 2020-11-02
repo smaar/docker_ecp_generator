@@ -9,12 +9,12 @@ Run the following command in terminal:
 
 UNIX
 ```
-docker run -d --name docker-ecps -p 5000:5000 -w /opt/docker-compose-projects/ -v /var/run/docker.sock:/var/run/docker.sock matt1919/docker-ecps
+docker run -d --name docker-ecps -p 5000:5000 -w /opt/docker-compose-projects/ -v /var/run/docker.sock:/var/run/docker.sock matt1919/docker-ecps:1.0.0
 ```
 
 WINDOWS
 ```
-docker run -d --name docker-ecps -p 5000:5000 -w //opt/docker-compose-projects/ -v //var/run/docker.sock:/var/run/docker.sock matt1919/docker-ecps
+docker run -d --name docker-ecps -p 5000:5000 -w //opt/docker-compose-projects/ -v //var/run/docker.sock:/var/run/docker.sock matt1919/docker-ecps:1.0.0
 ```
 
 You can then connect to the UI at `http://localhost:5000`
