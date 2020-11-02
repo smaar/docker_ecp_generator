@@ -15,8 +15,8 @@ RUN virtualenv /env && \
     /env/bin/python -m pip install --upgrade pip && \
     /env/bin/pip install --no-cache-dir -r /app/requirements.txt
 
-COPY . /app
-COPY demo-projects /opt/docker-compose-projects
+COPY ./ /app
+COPY ./demo-projects /opt/docker-compose-projects
 
 FROM python:3.8-alpine
 
