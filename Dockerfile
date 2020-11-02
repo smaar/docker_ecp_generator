@@ -1,5 +1,7 @@
 FROM python:3.8-alpine
 
+ENV STATIC_PATH /app/static
+
 RUN pip install virtualenv
 
 RUN apk add -U --no-cache git \
