@@ -1,4 +1,4 @@
-FROM python:3.8-alpine AS builder
+FROM python:3.8-alpine
 
 RUN pip install virtualenv
 
@@ -16,17 +16,10 @@ RUN virtualenv /env && \
     /env/bin/pip install --no-cache-dir -r /app/requirements.txt
 
 COPY ./ /app
-COPY ./demo-projects /opt/docker-compose-projects
-
-FROM python:3.8-alpine
-
-RUN apk add -U --no-cache git 
 
 VOLUME ["/opt/docker-compose-projects"]
 
-COPY --from=builder /env /env
-COPY --from=builder /app /app
-COPY --from=builder /opt/docker-compose-projects /opt/docker-compose-projects
+COPY ./demo-projects /opt/docker-compose-projects
 
 EXPOSE 5000
 
