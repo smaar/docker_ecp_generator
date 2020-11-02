@@ -24,7 +24,7 @@ YML_PATH = os.getenv('DOCKER_COMPOSE_UI_YML_PATH') or '.'
 COMPOSE_REGISTRY = os.getenv('DOCKER_COMPOSE_REGISTRY')
 
 logging.basicConfig(level=logging.INFO)
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__, static_folder='/app/static', static_url_path='')
 
 
 def load_projects():
