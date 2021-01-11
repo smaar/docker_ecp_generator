@@ -19,6 +19,7 @@ RUN apt-get update && \
 RUN docker-php-ext-install soap
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install mcrypt
+RUN docker-php-ext-install mbstring
 RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/lib/ --with-freetype-dir=/usr/lib/ && \
     docker-php-ext-install gd
 
