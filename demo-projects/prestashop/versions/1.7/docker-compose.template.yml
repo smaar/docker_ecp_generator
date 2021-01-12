@@ -12,8 +12,8 @@ services:
     image: 'docker.io/bitnami/prestashop:1.7'
     user: root
     ports:
-      - '80:8080'
-      - '443:8443'
+      - '80:80'
+      - '443:443'
       - '22:22'
     environment:
       - PRESTASHOP_HOST=localhost
@@ -22,6 +22,10 @@ services:
       - PRESTASHOP_DATABASE_USER=bn_prestashop
       - PRESTASHOP_DATABASE_NAME=bitnami_prestashop
       - ALLOW_EMPTY_PASSWORD=yes
+      - APACHE_HTTP_PORT_NUMBER=80
+      - APACHE_HTTPS_PORT_NUMBER=443
+      - PRESTASHOP_EXTERNAL_HTTP_PORT_NUMBER=80
+      - PRESTASHOP_EXTERNAL_HTTPS_PORT_NUMBER=443
     volumes:
       - 'prestashop_data:/bitnami/prestashop'
     depends_on:
